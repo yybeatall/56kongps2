@@ -1,4 +1,4 @@
-import pdprocess,loginsucc,logout
+import pickupDeliveryPro,loginsucc,logout
 import unittest
 
 
@@ -8,7 +8,7 @@ import unittest
 testcases = unittest.TestLoader().loadTestsFromTestCase(loginsucc.MyTestCase)
 
 # 执行通过交接页实现提到货
-testcases.addTest(pdprocess.MyTestCase("testFromTakeover"))
+testcases.addTest(pickupDeliveryPro.MyTestCase("testFromTakeover"))
 #testcases.addTest(pdprocess.MyTestCase("testFromPickup"))
 #testcases.addTest(pdprocess.MyTestCase("testFromDelivery"))
 

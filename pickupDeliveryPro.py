@@ -1,27 +1,14 @@
 # usr/bin/python
 # encoding:utf-8
-# 足迹版测试--提到货流程
+# 足迹版测试--执行交接提到货流程
 import unittest
 from time import sleep
 from appium import webdriver
+from method import setPrama
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-
-        desired_caps = {}
-        desired_caps['platformName'] = 'Android'
-        # 天天模拟器
-        desired_caps['platformVersion'] = '4.4.4'
-        desired_caps['deviceName'] = '127.0.0.1:6555'
-        #小米真机
-        # desired_caps['platformVersion'] = '5.1.1'
-        # desired_caps['deviceName'] = 'd727fe13'
-        desired_caps['appPackage'] = 'com.yihu001.kon.driver'
-        desired_caps['appActivity'] = '.activity.MainActivity'
-        desired_caps["unicodeKeyboard"] = "True"
-        desired_caps["resetKeyboard"] = "True"
-        # desired_caps["automationName"] = "Selendroid"
-        self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+        self.driver = setPrama.setParam(self)
 
     '''①从首页交接按钮进入'''
     def testFromTakeover(self):
